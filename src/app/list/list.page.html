@@ -1,0 +1,37 @@
+<!-- /**
+ * Shoppr - E-commerce app starter Ionic 4(https://www.enappd.com)
+ *
+ * Copyright © 2018-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source .
+ */ -->
+
+<div *ngIf="!data">
+  <ion-spinner name="lines"></ion-spinner>
+</div>
+
+<div *ngIf="data && data.length == 0" class="mid">
+  <ion-row size="12" justify-content-center disabled="true">
+    <button class="circle">
+      <ion-icon name="mail" size="large"></ion-icon>
+    </button>
+  </ion-row>
+  <ion-row size="12" justify-content-center disabled="true">
+    <ion-text><strong>You have no notifications yet!</strong></ion-text>
+  </ion-row>
+</div>
+<div *ngIf="data && data.length > 0">
+  <div *ngFor="let item of data" class="card">
+    <ion-row>
+      <ion-col>
+        <ion-row class="title" text-left>
+          {{ item.title.rendered }}
+        </ion-row>
+        <ion-row margin-top class="time">
+          {{ getDays(item.date) }}
+        </ion-row>
+      </ion-col>
+    </ion-row>
+  </div>
+</div>

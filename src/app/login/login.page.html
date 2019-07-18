@@ -1,0 +1,117 @@
+<!-- /**
+ * Shoppr - E-commerce app starter Ionic 4(https://www.enappd.com)
+ *
+ * Copyright © 2018-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source .
+ */ -->
+
+<ion-header padding color="mytheme" class="mybg head">
+  <ion-row justify-content-center>
+    <ion-img src="assets/images/login.png" class="head-image"></ion-img>
+  </ion-row>
+</ion-header>
+
+<ion-content padding>
+  <ion-text
+    ><h3 no-margin margin-bottom text-center class="title">
+      Login
+    </h3></ion-text
+  >
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-input
+          clearInput
+          type="email"
+          placeholder="Correo Electrónico"
+          [(ngModel)]="email"
+          class="input"
+          padding-horizontal
+        ></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-input
+          clearInput
+          type="password"
+          placeholder="Contraseña"
+          [(ngModel)]="password"
+          class="input"
+          padding-horizontal
+        ></ion-input>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text
+          float-end
+          color="medium"
+          (click)="fun.navigate('passwordreset', true)"
+          ><h6 no-margin text-end class="small">Olvido su Contraseña?</h6></ion-text
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          [disabled]="disableBtn"
+          expand="block"
+          (click)="signin()"
+          color="mytheme"
+          ><strong class="white">Ingreso</strong
+          ><span *ngIf="spinner"><ion-spinner name="lines"></ion-spinner></span
+        ></ion-button>
+      </ion-col>
+    </ion-row>
+    <div class="line"></div>
+    <ion-row>
+      <ion-col>
+        <ion-button expand="block" fill="outline" color="fb" no-padding
+          ><ion-img
+            src="assets/images/facebook_logo.png"
+            slot="start"
+            class="logo"
+            margin-end
+          ></ion-img
+          >Facebook</ion-button
+        >
+      </ion-col>
+      <ion-col>
+        <ion-button expand="block" color="light" no-padding
+          ><ion-img
+            src="assets/images/google_logo.png"
+            slot="start"
+            class="logo"
+            margin-end
+          ></ion-img
+          >Google</ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-button
+          expand="block"
+          fill="outline"
+          color="primary"
+          (click)="fun.navigate('signup')"
+          color="mytheme"
+          ><strong>Crea tu usuario</strong></ion-button
+        >
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <ion-text text-center color="medium"
+          ><h6 no-margin class="small">
+            <a (click)="open_modal(true)">Términos de Uso</a> y
+            <a (click)="open_modal(false)">Política de Privacidad</a>
+          </h6></ion-text
+        >
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

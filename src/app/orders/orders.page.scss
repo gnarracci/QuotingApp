@@ -1,0 +1,49 @@
+.menu {
+  color: white !important;
+}
+.card {
+  padding: 6px;
+  border-radius: 3px;
+  border: 0.3px solid rgb(210, 210, 210);
+  background-color: white;
+}
+.title {
+  font-size: 15px;
+}
+.sub {
+  font-size: 12px;
+}
+.item-icon {
+  font-size: 32px;
+}
+
+.spinner {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ion-row.cardRow {
+  width: 100%;
+}
+
+.editbtn {
+  color: #31b1f0;
+}
+
+.noOrderSection{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 86vh;
+   
+    h3{
+      margin:0;
+    }
+    p{
+      margin-bottom: 8px;
+      margin-top: 8px;
+    }
+}

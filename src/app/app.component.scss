@@ -1,0 +1,15 @@
+.userAvatar{
+    border: 1px solid #ededed;
+    padding: 4px;
+}
+.loaderSection{
+    display: flex;
+    height: 87vh;
+    align-items: center;
+    justify-content: center;
+
+    ion-spinner{
+        width: 52px;
+        height: 52px;
+    }
+}

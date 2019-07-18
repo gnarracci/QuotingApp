@@ -1,0 +1,47 @@
+<ion-header class="mybg">
+  <ion-toolbar color="mytheme">
+    <ion-buttons slot="start">
+      <ion-menu-button class="white menu" color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">My Profile</ion-title>
+  </ion-toolbar>
+  <ion-toolbar color="mytheme">
+    <div class="avatar">
+      <ion-avatar margin-vertical *ngIf="userData">
+        <img src="{{ userData.avatar_url }}"  />
+      </ion-avatar>
+      <ion-avatar margin-vertical *ngIf="!userData" class="userAvatar">
+        <img src="assets/images/avatar_user.png"  />
+      </ion-avatar>
+      <div class="user">
+        {{ userData && userData.username }}
+      </div>
+    </div>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="userData && userData.shipping">
+    <ion-card-header>
+      <ion-row align-items-center>
+        <ion-col size="10">
+          <h3><strong>Shipping Address</strong></h3>
+        </ion-col>
+        <ion-col size="2">
+          <strong
+            ><span (click)="addAddress()" class="editbtn">Edit</span></strong
+          >
+        </ion-col>
+      </ion-row>
+    </ion-card-header>
+    <ion-card-content>
+      <div>
+        {{ userData.shipping.first_name }} {{ userData.shipping.last_name }}
+      </div>
+      <div>
+        {{ userData.shipping.address_1 }}, {{ userData.shipping.address_2 }},
+        {{ userData.shipping.city }}, {{ userData.shipping.state }}
+      </div>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

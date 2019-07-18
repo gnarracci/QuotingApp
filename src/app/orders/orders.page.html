@@ -1,0 +1,77 @@
+<!-- /**
+ * Shoppr - E-commerce app starter Ionic 4(https://www.enappd.com)
+ *
+ * Copyright © 2018-present Enappd. All rights reserved.
+ *
+ * This source code is licensed as per the terms found in the
+ * LICENSE.md file in the root directory of this source .
+ */ -->
+
+<div *ngIf="!orders" class="spinner">
+  <ion-spinner name="lines"></ion-spinner>
+</div>
+
+<ion-header class="mybg">
+  <ion-toolbar color="mytheme">
+    <ion-buttons slot="start">
+      <ion-menu-button class="white menu" color="light"></ion-menu-button>
+    </ion-buttons>
+    <ion-title color="light">
+      Your Orders
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon
+          name="cart"
+          slot="icon-only"
+          (click)="fun.navigate('cart')"
+          class="white"
+          margin
+        ></ion-icon>
+        <ion-badge id="cart-badge">{{ cartItems }}</ion-badge>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding color="light" *ngIf="orders">
+  <ion-item
+    margin-bottom
+    no-padding
+    lines="none"
+    *ngFor="let order of orders"
+    class="card"
+    (click)="open(order)"
+  >
+    <ion-row align-items-center class="cardRow">
+      <ion-col size="4">
+        <!-- <img [src]="order.product.image[0]" /> -->
+        $ {{ order.total }}
+      </ion-col>
+      <ion-col size="6">
+        <ion-row *ngFor="let o of order.line_items">
+          <ion-text>
+            <h5 class="title" no-margin>
+              ({{ o.quantity }})<strong>{{ o.name }}</strong>
+            </h5>
+          </ion-text>
+        </ion-row>
+      </ion-col>
+      <ion-col float-right size="2">
+        <ion-icon
+          class="item-icon mycolor"
+          name="arrow-dropright"
+          float-right
+          mode="ios"
+        ></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-item>
+  <div class="noOrderSection" *ngIf="orders.length === 0">
+    <h3>You have no Past order </h3>
+    <p>Let get you Started</p>
+    <ion-button color="primary" text-uppercase (click)="startShopping()">Start Shopping</ion-button>
+
+  </div>
+
+</ion-content>
