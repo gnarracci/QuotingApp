@@ -89,14 +89,14 @@ export class LoginPage implements OnInit {
     if (b) {
       modal = await this.modalController.create({
         component: InfomodalPage,
-        componentProps: { value: this.data.terms_of_use, title: "Terms of Use" }
+        componentProps: { value: this.data.terms_of_use, title: "Términos de Uso" }
       });
     } else {
       modal = await this.modalController.create({
         component: InfomodalPage,
         componentProps: {
           value: this.data.privacy_policy,
-          title: "Privacy Policy"
+          title: "Políticas de Privacidad"
         }
       });
     }

@@ -87,4 +87,6 @@
     <preference name="SplashScreenDelay" value="3000" />
     <plugin name="cordova-plugin-advanced-http" spec="^2.0.4" />
     <engine name="ios" spec="4.5.5" />
+    <plugin name="cordova-plugin-nativestorage" spec="2.3.2" />
+    <engine name="browser" spec="~5.0.4" />
 </widget>
