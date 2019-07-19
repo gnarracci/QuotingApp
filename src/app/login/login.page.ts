@@ -71,7 +71,7 @@ export class LoginPage implements OnInit {
             this.disableBtn = false;
             this.spinner = false;
             this.fun.presentToast(
-              "Incorrect input details!",
+              "Datos de Ingreso Incorrectos!",
               true,
               "bottom",
               2100
@@ -79,7 +79,7 @@ export class LoginPage implements OnInit {
           }
         });
       } else {
-        this.fun.presentToast("Wrong Input!", true, "bottom", 2100);
+        this.fun.presentToast("Ingreso Errado!", true, "bottom", 2100);
       }
     });
   }

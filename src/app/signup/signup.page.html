@@ -16,7 +16,7 @@
 <ion-content padding>
   <ion-text
     ><h3 no-margin margin-bottom text-center class="title">
-      Sign Up
+      Registro
     </h3></ion-text
   >
   <ion-grid>
@@ -24,7 +24,7 @@
       <ion-col>
         <ion-input
           type="text"
-          placeholder="First Name"
+          placeholder="Nombres"
           [(ngModel)]="first_name"
           class="input"
           padding-horizontal
@@ -33,7 +33,7 @@
       <ion-col>
         <ion-input
           type="text"
-          placeholder="Last Name"
+          placeholder="Apellidos"
           [(ngModel)]="last_name"
           class="input"
           padding-horizontal
@@ -45,7 +45,7 @@
         <ion-input
           clearInput
           type="email"
-          placeholder="Email"
+          placeholder="Correo Electrónico"
           [(ngModel)]="email"
           class="input"
           padding-horizontal
@@ -57,7 +57,7 @@
         <ion-input
           clearInput
           type="password"
-          placeholder="Password"
+          placeholder="Contraseña"
           [(ngModel)]="password"
           class="input"
           padding-horizontal
@@ -72,7 +72,7 @@
           color="primary"
           (click)="signup()"
           color="mytheme"
-          ><strong class="white">Create an Account</strong
+          ><strong class="white">Registra tu Acceso</strong
           ><span *ngIf="spinner"><ion-spinner name="lines"></ion-spinner></span
         ></ion-button>
       </ion-col>
@@ -109,7 +109,7 @@
           fill="outline"
           color="mytheme"
           (click)="fun.navigate('login')"
-          ><strong>Have an account? Sign in</strong></ion-button
+          ><strong>Tienes una cuenta? Ingresa</strong></ion-button
         >
       </ion-col>
     </ion-row>
@@ -117,8 +117,8 @@
       <ion-col>
         <ion-text text-center color="medium"
           ><h6 no-margin class="small">
-            <a (click)="open_modal(true)">Terms of Use</a> and
-            <a (click)="open_modal(false)">Privacy Policy</a>
+            <a (click)="open_modal(true)">Términos de Uso</a> and
+            <a (click)="open_modal(false)">Políticas de Privacidad</a>
           </h6></ion-text
         >
       </ion-col>
